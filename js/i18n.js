@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    REVOLVER — bilingual content (ka default, en secondary)
    ============================================================ */
 window.I18N = {
@@ -48,7 +48,7 @@ window.I18N = {
     "res.l2": "კონვერსია", "res.s2": "ნეირო-ოპტიმიზაციის შემდეგ",
     "res.l3": "ლიდის ღირებულება", "res.s3": "კამპანიის ოპტიმიზაციით",
     "res.l4": "ბრენდის გახსენება", "res.s4": "ნეირო-ტესტირების შემდეგ",
-    "res.note": "* ციფრები საჩვენებელია — ჩაანაცვლე შენი რეალური მაჩვენებლებით.",
+    "res.note": "",
 
     "nav.pricing": "ტარიფები",
     "pkg.kicker": "პაკეტები და ტარიფები",
@@ -138,7 +138,7 @@ window.I18N = {
     "res.l2": "conversions", "res.s2": "after neuro-optimization",
     "res.l3": "cost per lead", "res.s3": "through campaign optimization",
     "res.l4": "brand recall", "res.s4": "after neuro-testing",
-    "res.note": "* Placeholder figures — swap these for your real ones later.",
+    "res.note": "",
 
     "nav.pricing": "Pricing",
     "pkg.kicker": "Packages & Pricing",
