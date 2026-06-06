@@ -796,3 +796,8 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   .hero-cta .btn{width:100%;justify-content:center;padding:16px 20px;}
   .hero-cta .btn span:last-child{font-size:15px;white-space:normal;text-align:center;}
 }
+
+/* Footer wordmark center on mobile */
+@media (max-width:560px){
+  .footer-word{margin-left:0;display:block;margin:0 auto;}
+}
