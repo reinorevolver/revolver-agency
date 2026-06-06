@@ -814,3 +814,15 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   letter-spacing:18px;
   margin-top:clamp(30px,4vw,50px);
 }
+
+/* Results decorative mark */
+.results-mark{text-align:center;margin-top:clamp(30px,4vw,50px);}
+.results-mark img{
+  width:min(160px,35vw);
+  height:auto;
+  border-radius:12px;
+  opacity:.18;
+  filter:grayscale(1) brightness(1.8);
+  mix-blend-mode:screen;
+  display:inline-block;
+}
