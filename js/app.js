@@ -373,3 +373,13 @@
     boot();
   }
 })();
+
+// Close menu on outside click
+document.addEventListener('click', function(e) {
+  var nav = document.querySelector('.nav');
+  var burger = document.querySelector('.btn-burger');
+  if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)) {
+    nav.classList.remove('open');
+    burger.classList.remove('is-open');
+  }
+});
