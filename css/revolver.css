@@ -826,3 +826,7 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   mix-blend-mode:screen;
   display:inline-block;
 }
+
+/* Remove extra space between results and pricing */
+#results{padding-bottom:clamp(30px,4vw,50px);}
+#pricing{padding-top:clamp(30px,4vw,50px);}
