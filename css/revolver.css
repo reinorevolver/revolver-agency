@@ -763,3 +763,22 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   .svc-list{display:grid;gap:14px;margin-top:30px;}
   .cyl-detail{display:none;}
 }
+
+/* ============================================================
+   MOBILE FIXES
+   ============================================================ */
+@media (max-width:560px){
+  .hero-cta .btn{min-width:0;padding:14px 16px;}
+  .site-header{padding:10px 14px;gap:10px;}
+  .brand{gap:8px;}
+  .brand-mark{width:36px;height:36px;}
+  .brand-name{font-size:18px;}
+  .brand-tag{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px;}
+  .header-right{gap:8px;}
+  .lang-toggle button{padding:4px 8px;font-size:11px;}
+  .why-contrasts li{font-size:clamp(15px,4vw,19px);gap:12px;padding:14px 0;}
+  .why-contrasts .casing{width:30px;height:30px;}
+  .why-big{font-size:clamp(110px,30vw,200px);}
+  .results-grid{gap:14px;}
+  .stat-card{padding:24px 18px 20px;}
+}
