@@ -839,12 +839,7 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   -webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 15%,black 80%,transparent 100%);
 }
 
-/* Hero video seamless loop fade */
-.hero-video{
-  animation:videoloop 8s ease-in-out infinite;
-}
-@keyframes videoloop{
-  0%{opacity:0;}
+
   8%{opacity:.28;}
   85%{opacity:.28;}
   100%{opacity:0;}
