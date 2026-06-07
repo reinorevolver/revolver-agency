@@ -852,6 +852,9 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
 
 /* Hero kicker logo mark (replaces star) */
 .hero-kicker .star-logo{
-  height:18px;width:auto;border-radius:3px;
+  height:24px;width:auto;
   vertical-align:middle;display:inline-block;
+  mix-blend-mode:screen;
+  filter:brightness(1.05) contrast(1.5);
+  transform:scale(1.3);
 }
