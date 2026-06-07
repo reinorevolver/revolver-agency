@@ -383,3 +383,22 @@ document.addEventListener('click', function(e) {
     burger.classList.remove('is-open');
   }
 });
+
+/* Hero video — fade synced to the video's actual loop point */
+(function(){
+  var v = document.querySelector('.hero-video');
+  if(!v) return;
+  var FADE = 0.7;   // fade duration in seconds (near start and end)
+  var MAX = 0.28;   // peak opacity
+  function loop(){
+    var d = v.duration, t = v.currentTime;
+    if(d && !isNaN(d)){
+      var o = MAX;
+      if(t < FADE) o = MAX * (t / FADE);
+      else if(t > d - FADE) o = MAX * ((d - t) / FADE);
+      v.style.opacity = o.toFixed(3);
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
