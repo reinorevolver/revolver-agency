@@ -258,7 +258,8 @@ window.PACKAGES = [
         "მრავალფორმატიანი სარეკლამო მასალების შექმნა",
         "პროფესიონალური გახმოვანება ვიდეო-რეკლამებისთვის",
         "რეტარგეტინგი — რეკლამა მიჰყვება მათ, ვინც პროდუქტი ნახა და არ იყიდა",
-        "აუდიტორიის ზუსტი ნეირო-სეგმენტაცია და რეკლამების A/B ტესტირება"
+        "აუდიტორიის ზუსტი ნეირო-სეგმენტაცია და რეკლამების A/B ტესტირება",
+        "ვებ-გვერდის შექმნა"
       ],
       guarantee: true
     },
@@ -270,7 +271,8 @@ window.PACKAGES = [
         "Multi-format advertising creative production",
         "Professional voiceover for video ads",
         "Retargeting — ads follow those who viewed but didn't buy",
-        "Precise neuro-segmentation & A/B testing of ads"
+        "Precise neuro-segmentation & A/B testing of ads",
+        "Website creation"
       ],
       guarantee: true
     }
