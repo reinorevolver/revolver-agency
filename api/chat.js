@@ -1,6 +1,5 @@
-﻿// Revolver Agency — AI chat backend (Google Gemini, free tier)
-// Model options: "gemini-2.0-flash" (fast, free) | "gemini-1.5-flash"
-var MODEL = "gemini-2.0-flash";
+﻿// Revolver Agency — AI chat backend (Groq, free, no card required)
+var MODEL = "llama-3.3-70b-versatile";
 
 var SYSTEM_PROMPT = [
   "You are the AI assistant for Revolver Agency, the first neuromarketing agency in Georgia (Tbilisi).",
@@ -27,33 +26,28 @@ var SYSTEM_PROMPT = [
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") { res.status(405).json({ error: "Method not allowed" }); return; }
-  var apiKey = process.env.GEMINI_API_KEY;
+  var apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) { res.status(500).json({ error: "Server not configured" }); return; }
   try {
     var body = req.body || {};
-    var messages = body.messages;
-    if (!Array.isArray(messages) || messages.length === 0) { res.status(400).json({ error: "Bad request" }); return; }
-    var contents = messages.slice(-12).map(function (m) {
-      return { role: m.role === "assistant" ? "model" : "user", parts: [{ text: String(m.content || "").slice(0, 2000) }] };
+    var msgs = body.messages;
+    if (!Array.isArray(msgs) || msgs.length === 0) { res.status(400).json({ error: "Bad request" }); return; }
+    var chat = [{ role: "system", content: SYSTEM_PROMPT }];
+    msgs.slice(-12).forEach(function (m) {
+      chat.push({ role: m.role === "assistant" ? "assistant" : "user", content: String(m.content || "").slice(0, 2000) });
     });
-    var url = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL + ":generateContent?key=" + apiKey;
-    var r = await fetch(url, {
+    var r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents: contents,
-        generationConfig: { maxOutputTokens: 1024, temperature: 0.7 }
-      })
+      headers: { "content-type": "application/json", "authorization": "Bearer " + apiKey },
+      body: JSON.stringify({ model: MODEL, messages: chat, max_tokens: 1024, temperature: 0.7 })
     });
-    if (!r.ok) { var t = await r.text(); res.status(502).json({ error: "Upstream error", detail: t.slice(0, 400) }); return; }
+    if (!r.ok) { var t = await r.text(); console.error("GROQ_ERROR", r.status, t); res.status(502).json({ error: "Upstream error", detail: t.slice(0, 400) }); return; }
     var data = await r.json();
     var text = "";
-    if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
-      text = data.candidates[0].content.parts.map(function (p) { return p.text || ""; }).join("").trim();
-    }
+    if (data.choices && data.choices[0] && data.choices[0].message) { text = (data.choices[0].message.content || "").trim(); }
     res.status(200).json({ reply: text });
   } catch (e) {
+    console.error("SERVER_ERROR", e && e.message);
     res.status(500).json({ error: "Server error" });
   }
 };
