@@ -22,7 +22,7 @@ window.I18N = {
 
     "about.kicker": "ვინ ვართ ჩვენ",
     "about.title": "მარკეტინგი, როგორც ზუსტი მეცნიერება",
-    "about.body": "კრეატივი ჩვენთვის თვითმიზანი არ არის. გვაინტერესებს ერთი რამ - რა აიძულებს ადამიანს იყიდოს და რა აჩერებს ბოლო წამს.<br><br>ვიყენებთ ნეირომეცნიერულ მეთოდებს ბიზნესის მოგების გასაზრდელად და ამის საფუძველზე ვქმნით ყველა მარკეტინგულ კამპანიას.<br><br>შედეგის შესაფასებლად კი მხოლოდ ერთ საზომს ვიყენებთ - რამდენი გაყიდე.",
+    "about.body": "კრეატივი ჩვენთვის თვითმიზანი არ არის. გვაინტერესებს ერთი რამ - რა აიძულებს ადამიანს იყიდოს და რა აჩერებს ბოლო წამს.<br>ვიყენებთ ნეირომეცნიერულ მეთოდებს ბიზნესის მოგების გასაზრდელად და ამის საფუძველზე ვქმნით ყველა მარკეტინგულ კამპანიას.<br>შედეგის შესაფასებლად კი მხოლოდ ერთ საზომს ვიყენებთ - რამდენი გაყიდე.",
     "about.p1": "ქცევითი მეცნიერება",
     "about.p2": "ნეირომეცნიერება",
     "about.p3": "მონაცემები, არა ვარაუდი",
@@ -112,7 +112,7 @@ window.I18N = {
 
     "about.kicker": "Who We Are",
     "about.title": "Marketing as an Exact Science",
-    "about.body": "Creativity is not an end in itself for us. We care about one thing — what makes a person buy, and what stops them at the last second.<br><br>We use neuroscience-based methods to grow business profit, and build every marketing campaign on that foundation.<br><br>To measure results, we use only one metric — how much you sold.",
+    "about.body": "Creativity is not an end in itself for us. We care about one thing — what makes a person buy, and what stops them at the last second.<br>We use neuroscience-based methods to grow business profit, and build every marketing campaign on that foundation.<br>To measure results, we use only one metric — how much you sold.",
     "about.p1": "Behavioral science",
     "about.p2": "Neuroscience",
     "about.p3": "Data, not guesswork",
@@ -310,5 +310,6 @@ window.ADDONS = [
   { price: "1200", ka: "TikTok — 5 ვიდეო თვეში", en: "TikTok — 5 videos / month" },
   { price: "2000", ka: "TikTok — 10 ვიდეო თვეში", en: "TikTok — 10 videos / month" }
 ];
+
 
 
