@@ -111,8 +111,8 @@ window.I18N = {
     "hero.scroll": "Scroll",
 
     "about.kicker": "Who We Are",
-    "about.title": "Science, Loaded into the Chamber",
-    "about.body": "Revolver Agency is a neuromarketing agency that studies how the human brain makes buying decisions — and turns that knowledge into brand growth. We don't rely on guesswork. We use behavioral science, neuroscience, and data to understand what drives attention, emotion, and action. The result is marketing that hits the target every time.",
+    "about.title": "Marketing as an Exact Science",
+    "about.body": "Creativity is not an end in itself for us. We care about one thing — what makes a person buy, and what stops them at the last second.<br><br>We use neuroscience-based methods to grow business profit, and build every marketing campaign on that foundation.<br><br>To measure results, we use only one metric — how much you sold.",
     "about.p1": "Behavioral science",
     "about.p2": "Neuroscience",
     "about.p3": "Data, not guesswork",
@@ -310,4 +310,5 @@ window.ADDONS = [
   { price: "1200", ka: "TikTok — 5 ვიდეო თვეში", en: "TikTok — 5 videos / month" },
   { price: "2000", ka: "TikTok — 10 ვიდეო თვეში", en: "TikTok — 10 videos / month" }
 ];
+
 
