@@ -4,7 +4,7 @@
 window.I18N = {
   ka: {
     "nav.home": "მთავარი",
-    "nav.about": "ჩვენ შესახებ",
+    "nav.about": "ვინ ვართ ჩვენ?",
     "nav.services": "სერვისები",
     "nav.why": "მიდგომა",
     "nav.results": "შედეგები",

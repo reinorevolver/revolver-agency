@@ -844,3 +844,8 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   85%{opacity:.28;}
   100%{opacity:0;}
 }
+
+/* Nudge nav slightly left for better centering (desktop) */
+@media(min-width:981px){
+  .nav{margin-left:-3vw;}
+}
