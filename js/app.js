@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    REVOLVER — interactions
    ============================================================ */
 (function () {
@@ -383,33 +383,3 @@ document.addEventListener('click', function(e) {
     burger.classList.remove('is-open');
   }
 });
-
-/* Hero spark particles */
-(function(){
-  var hero = document.querySelector('.hero');
-  if(!hero) return;
-  var flash = document.createElement('div');
-  flash.className = 'muzzle-flash';
-  hero.appendChild(flash);
-  var wrap = document.createElement('div');
-  wrap.className = 'hero-sparks';
-  var n = 28;
-  for(var i=0;i<n;i++){
-    var s = document.createElement('i');
-    var angle = -90 + (Math.random()-0.5)*140;
-    var rad = angle*Math.PI/180;
-    var dist = 80+Math.random()*160;
-    var dur = 2.8+Math.random()*1.6;
-    var delay = Math.random()*3.2;
-    var h = 18+Math.random()*28;
-    var r = (Math.random()-0.5)*30;
-    var colors = ['rgba(255,200,60,','rgba(221,122,53,','rgba(192,86,28,','rgba(255,255,200,'];
-    var col = colors[Math.floor(Math.random()*colors.length)];
-    s.style.cssText =
-      'left:50%;top:42%;height:'+h+'px;background:linear-gradient(to top,'+col+'0),'+col+'1));'+
-      'animation-duration:'+dur+'s;animation-delay:-'+delay+'s;'+
-      '--r:'+r+'deg;--dx:'+Math.round(dist*Math.cos(rad))+'px;--dy:'+Math.round(dist*Math.sin(rad))+'px;';
-    wrap.appendChild(s);
-  }
-  hero.appendChild(wrap);
-})();
