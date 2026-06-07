@@ -863,3 +863,8 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   .footer-blurb{margin-top:-6px;}
   .footer-top{gap:24px;}
 }
+
+/* Pull footer blurb up closer to the logo (desktop only) */
+@media(min-width:981px){
+  .footer-blurb{margin-top:-90px;}
+}
