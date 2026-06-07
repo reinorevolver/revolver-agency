@@ -1,9 +1,6 @@
-﻿// Revolver Agency — AI chat backend (Vercel serverless function)
-// To change the model (e.g. for lower cost), edit MODEL below:
-//   "claude-opus-4-8"  = smartest (default)
-//   "claude-sonnet-4-6" = balanced
-//   "claude-haiku-4-5"  = cheapest / fastest
-var MODEL = "claude-opus-4-8";
+﻿// Revolver Agency — AI chat backend (Google Gemini, free tier)
+// Model options: "gemini-2.0-flash" (fast, free) | "gemini-1.5-flash"
+var MODEL = "gemini-2.0-flash";
 
 var SYSTEM_PROMPT = [
   "You are the AI assistant for Revolver Agency, the first neuromarketing agency in Georgia (Tbilisi).",
@@ -25,30 +22,36 @@ var SYSTEM_PROMPT = [
   "",
   "ADD-ONS (monthly, GEL): full reel production 350; Google Ads setup and management 600; audio services 800; TikTok 5 videos 1200; TikTok 10 videos 2000.",
   "",
-  "CONTACT: email aim@revolver.ge, phone +995 555 451 003, office hours Mon-Sat 10:00-19:00.",
-  "",
-  "Respond ONLY with your final answer to the user. Do not include reasoning or meta-commentary."
+  "CONTACT: email aim@revolver.ge, phone +995 555 451 003, office hours Mon-Sat 10:00-19:00."
 ].join("\n");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") { res.status(405).json({ error: "Method not allowed" }); return; }
-  var apiKey = process.env.ANTHROPIC_API_KEY;
+  var apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) { res.status(500).json({ error: "Server not configured" }); return; }
   try {
     var body = req.body || {};
     var messages = body.messages;
     if (!Array.isArray(messages) || messages.length === 0) { res.status(400).json({ error: "Bad request" }); return; }
-    var safe = messages.slice(-12).map(function (m) {
-      return { role: m.role === "assistant" ? "assistant" : "user", content: String(m.content || "").slice(0, 2000) };
+    var contents = messages.slice(-12).map(function (m) {
+      return { role: m.role === "assistant" ? "model" : "user", parts: [{ text: String(m.content || "").slice(0, 2000) }] };
     });
-    var r = await fetch("https://api.anthropic.com/v1/messages", {
+    var url = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL + ":generateContent?key=" + apiKey;
+    var r = await fetch(url, {
       method: "POST",
-      headers: { "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: MODEL, max_tokens: 1024, thinking: { type: "disabled" }, system: SYSTEM_PROMPT, messages: safe })
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: contents,
+        generationConfig: { maxOutputTokens: 1024, temperature: 0.7 }
+      })
     });
     if (!r.ok) { var t = await r.text(); res.status(502).json({ error: "Upstream error", detail: t.slice(0, 400) }); return; }
     var data = await r.json();
-    var text = (data.content || []).filter(function (b) { return b.type === "text"; }).map(function (b) { return b.text; }).join("\n").trim();
+    var text = "";
+    if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+      text = data.candidates[0].content.parts.map(function (p) { return p.text || ""; }).join("").trim();
+    }
     res.status(200).json({ reply: text });
   } catch (e) {
     res.status(500).json({ error: "Server error" });
