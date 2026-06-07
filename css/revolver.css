@@ -873,3 +873,8 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
 @media(min-width:981px){
   .footer-word{margin-top:-15px;}
 }
+
+/* Footer logo up more (desktop) */
+@media(min-width:981px){
+  .footer-word{margin-top:-30px;}
+}
