@@ -2,8 +2,8 @@
 (function () {
   var lang = (document.documentElement.lang === "en") ? "en" : "ka";
   var T = {
-    ka: { title: "Revolver AI", sub: "გკითხე ნებისმიერი რამ", ph: "დაწერე შეტყობინება...", hi: "გამარჯობა! 👋 დაგეხმარები სერვისებში, პაკეტებსა და ფასებში. რა გაინტერესებს?", err: "ბოდიში, შეცდომა მოხდა. სცადე ხელახლა ან მოგვწერე: aim@revolver.ge", send: "გაგზავნა" },
-    en: { title: "Revolver AI", sub: "Ask me anything", ph: "Type a message...", hi: "Hi! 👋 I can help with services, packages and pricing. What would you like to know?", err: "Sorry, something went wrong. Try again or email aim@revolver.ge", send: "Send" }
+    ka: { title: "Revolver AI", sub: "გკითხე ნებისმიერი რამ", ph: "დაწერე შეტყობინება...", hi: "გამარჯობა! 👋 მე ხელოვნური ინტელექტი ვარ და ქართულად შესაძლოა ყველაფერი სრულყოფილად ვერ ჩამოვაყალიბო — წინასწარ ბოდიში. დაგეხმარები სერვისებში, პაკეტებსა და ფასებში. უფრო დეტალური ინფორმაციისთვის კი დარეკეთ: +995 555 451 003", err: "ბოდიში, შეცდომა მოხდა. სცადე ხელახლა ან მოგვწერე: aim@revolver.ge", send: "გაგზავნა" },
+    en: { title: "Revolver AI", sub: "Ask me anything", ph: "Type a message...", hi: "Hi! 👋 I am an AI assistant and my Georgian may not be perfect — apologies in advance. I can help with services, packages and pricing. For more detailed information, call us: +995 555 451 003", err: "Sorry, something went wrong. Try again or email aim@revolver.ge", send: "Send" }
   };
   var t = T[lang];
   var history = [];
@@ -83,3 +83,4 @@
     });
   });
 })();
+
