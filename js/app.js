@@ -323,7 +323,7 @@
         li.innerHTML =
           '<span class="casing"></span>' +
           '<span class="name">' + a[lang] + "</span>" +
-          '<span class="price">' + a.price + '<span class="c">₾</span>' + (a.suffix ? a.suffix : "") + '</span>';
+          '<span class="price">' + a.price + '<span class="c">₾</span>' + (a.suffix ? (typeof a.suffix === "string" ? a.suffix : (a.suffix[lang] || "")) : "") + '</span>';
         list.appendChild(li);
       });
     }
