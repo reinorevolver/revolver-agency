@@ -94,7 +94,7 @@ window.I18N = {
 
   en: {
     "nav.home": "Home",
-    "nav.about": "About",
+    "nav.about": "Who We Are?",
     "nav.services": "Services",
     "nav.why": "Approach",
     "nav.results": "Results",
