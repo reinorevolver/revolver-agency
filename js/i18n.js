@@ -190,11 +190,11 @@ window.SERVICES = [
     en: { name: "Content Strategy", desc: "A full content strategy that grows your brand with intent." }
   },
   {
-    ka: { name: "ნეირომარკეტინგული ქოფირაითინგი", desc: "ტექსტები, რომლებიც პირდაპირ გადაწყვეტილების ცენტრს ესაუბრება." },
+    ka: { name: "ნეირომარკეტინგული ქოფირაითინგი", desc: "ტექსტები, რომლებიც ადამიანის ტვინში გადაწყვეტილების ცენტრს ესაუბრება." },
     en: { name: "Neuromarketing Copywriting", desc: "Copy that speaks straight to the brain's decision center." }
   },
   {
-    ka: { name: "გრაფიკული დიზაინი", desc: "ვიზუალი, რომელიც ყურადღებას იპყრობს და ხსოვნაში რჩება." },
+    ka: { name: "გრაფიკული დიზაინი", desc: "ვიზუალი, რომელიც ყურადღებას იპყრობს და მეხსიერებაში რჩება." },
     en: { name: "Graphic Design", desc: "Visuals that grab attention and stay in memory." }
   },
   {
@@ -202,7 +202,7 @@ window.SERVICES = [
     en: { name: "Social Media Marketing", desc: "Strategic management and growth across social platforms." }
   },
   {
-    ka: { name: "ვიდეო გადაღება და მონტაჟი", desc: "სცენარიდან საბოლოო მონტაჟამდე — ვიდეო, რომელიც ყიდის." },
+    ka: { name: "ვიდეო გადაღება და მონტაჟი", desc: "გაყიდვებზე ორიენტირებული ვიდეო — სცენარიდან საბოლოო მონტაჟამდე." },
     en: { name: "Video Production & Editing", desc: "From script to final cut — video that sells." }
   },
   {
@@ -310,6 +310,7 @@ window.ADDONS = [
   { price: "1200", ka: "TikTok — 5 ვიდეო თვეში", en: "TikTok — 5 videos / month" },
   { price: "2000", ka: "TikTok — 10 ვიდეო თვეში", en: "TikTok — 10 videos / month" }
 ];
+
 
 
 
