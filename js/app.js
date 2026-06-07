@@ -384,21 +384,33 @@ document.addEventListener('click', function(e) {
   }
 });
 
-/* Hero video — fade synced to the video's actual loop point */
+/* Hero video — seamless crossfade loop (dual video) */
 (function(){
-  var v = document.querySelector('.hero-video');
-  if(!v) return;
-  var FADE = 0.7;   // fade duration in seconds (near start and end)
-  var MAX = 0.28;   // peak opacity
-  function loop(){
-    var d = v.duration, t = v.currentTime;
-    if(d && !isNaN(d)){
-      var o = MAX;
-      if(t < FADE) o = MAX * (t / FADE);
-      else if(t > d - FADE) o = MAX * ((d - t) / FADE);
-      v.style.opacity = o.toFixed(3);
+  var a = document.querySelector('.hero-video');
+  if(!a) return;
+  var MAX = 0.28, CF = 0.9;
+  a.removeAttribute('loop');
+  a.muted = true;
+  var b = a.cloneNode(true);
+  b.removeAttribute('loop');
+  b.muted = true;
+  a.parentNode.insertBefore(b, a.nextSibling);
+  a.style.transition = b.style.transition = 'opacity ' + CF + 's linear';
+  a.style.opacity = MAX; b.style.opacity = 0;
+  var cur = a, nxt = b, armed = true;
+  a.play();
+  function watch(){
+    var d = cur.duration;
+    if(d && !isNaN(d) && armed && cur.currentTime >= d - CF){
+      armed = false;
+      nxt.currentTime = 0;
+      nxt.play();
+      cur.style.opacity = 0;
+      nxt.style.opacity = MAX;
+      var tmp = cur; cur = nxt; nxt = tmp;
+      setTimeout(function(){ armed = true; }, CF * 1000 + 50);
     }
-    requestAnimationFrame(loop);
+    requestAnimationFrame(watch);
   }
-  requestAnimationFrame(loop);
+  requestAnimationFrame(watch);
 })();
