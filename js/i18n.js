@@ -190,7 +190,7 @@ window.SERVICES = [
     en: { name: "Content Strategy", desc: "A full content strategy that grows your brand with intent." }
   },
   {
-    ka: { name: "ნეირომარკეტინგული ქოფირაითინგი", desc: "ტექსტები, რომლებიც ადამიანის ტვინში გადაწყვეტილების ცენტრს ესაუბრება." },
+    ka: { name: "ნეირომარკეტინგული ქოფირაითინგი", desc: "ტექსტები, რომლებიც ყიდვის სურვილს აღვიძებენ." },
     en: { name: "Neuromarketing Copywriting", desc: "Copy that speaks straight to the brain's decision center." }
   },
   {
@@ -310,6 +310,7 @@ window.ADDONS = [
   { price: "1200", ka: "TikTok — 5 ვიდეო თვეში", en: "TikTok — 5 videos / month" },
   { price: "2000", ka: "TikTok — 10 ვიდეო თვეში", en: "TikTok — 10 videos / month" }
 ];
+
 
 
 
