@@ -712,7 +712,7 @@ html[lang="ka"] .info-row .l{letter-spacing:.3px;text-transform:none;font-size:1
    ============================================================ */
 .footer{background:var(--ink-3);padding:clamp(56px,7vw,90px) 0 36px;position:relative;}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;align-items:start;}
-.footer-word{width:min(460px,98%);margin-left:-68px;}
+.footer-word{width:min(420px,98%);margin-left:0;}
 .footer-blurb{margin-top:20px;color:var(--bone-dimmer);max-width:38ch;font-size:15px;}
 .footer-col h4{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);margin-bottom:16px;}
 html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size:14px;}
@@ -863,3 +863,4 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   .footer-blurb{margin-top:-6px;}
   .footer-top{gap:24px;}
 }
+
