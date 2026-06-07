@@ -830,3 +830,42 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
 /* Remove extra space between results and pricing */
 #results{padding-bottom:clamp(30px,4vw,50px);}
 #pricing{padding-top:clamp(30px,4vw,50px);}
+
+/* ============================================================
+   HERO — muzzle flash + spark particles
+   ============================================================ */
+.hero-sparks{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
+.hero-sparks i{
+  position:absolute;
+  width:2px;
+  border-radius:999px;
+  opacity:0;
+  transform-origin:bottom center;
+  animation:spark linear infinite;
+}
+@keyframes spark{
+  0%{opacity:0;transform:translateY(0) rotate(var(--r)) scaleY(1);}
+  10%{opacity:1;}
+  80%{opacity:.6;}
+  100%{opacity:0;transform:translateY(var(--dy)) translateX(var(--dx)) rotate(var(--r)) scaleY(.3);}
+}
+.muzzle-flash{
+  position:absolute;
+  left:50%;top:42%;
+  transform:translate(-50%,-50%);
+  width:120px;height:120px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,180,50,.95),rgba(192,86,28,.6) 40%,transparent 70%);
+  opacity:0;
+  animation:flash 3.2s ease-in-out infinite;
+  pointer-events:none;
+  z-index:1;
+  filter:blur(6px);
+}
+@keyframes flash{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.2);}
+  4%{opacity:1;transform:translate(-50%,-50%) scale(1.4);}
+  10%{opacity:.5;transform:translate(-50%,-50%) scale(.9);}
+  16%{opacity:0;transform:translate(-50%,-50%) scale(.3);}
+  100%{opacity:0;}
+}
