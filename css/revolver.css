@@ -855,3 +855,11 @@ html[lang="ka"] .footer-col h4{letter-spacing:.5px;text-transform:none;font-size
   height:20px;width:auto;
   vertical-align:middle;display:inline-block;
 }
+
+/* Footer tighten on mobile */
+@media(max-width:560px){
+  .footer{padding:34px 0 24px;}
+  .footer-word{width:min(300px,82%);}
+  .footer-blurb{margin-top:-6px;}
+  .footer-top{gap:24px;}
+}
