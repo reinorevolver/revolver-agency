@@ -330,20 +330,48 @@
   }
 
   /* ---------- Contact form ---------- */
+  var WEB3FORMS_KEY = "4eb57c15-aa39-404f-b848-171bd0ec2373";
   function initForm() {
     var form = document.querySelector(".contact-form");
     var toast = document.querySelector(".toast");
     if (!form) return;
+    var btn = form.querySelector("button[type=submit]");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      form.reset();
-      if (toast) {
-        toast.querySelector(".toast-msg").textContent = t("ct.sent");
-        toast.classList.add("show");
-        clearTimeout(form._tid);
-        form._tid = setTimeout(function () { toast.classList.remove("show"); }, 3600);
-      }
+      var data = {
+        access_key: WEB3FORMS_KEY,
+        subject: "ახალი შეტყობinება — Revolver Agency",
+        from_name: "Revolver Agency Website",
+        name: (form.name && form.name.value) || "",
+        email: (form.email && form.email.value) || "",
+        company: (form.company && form.company.value) || "",
+        message: (form.message && form.message.value) || ""
+      };
+      if (btn) btn.disabled = true;
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "content-type": "application/json", "accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (r) { return r.json(); }).then(function (res) {
+        if (btn) btn.disabled = false;
+        if (res && res.success) {
+          form.reset();
+          showToast(t("ct.sent"));
+        } else {
+          showToast(t("ct.senterr"));
+        }
+      }).catch(function () {
+        if (btn) btn.disabled = false;
+        showToast(t("ct.senterr"));
+      });
     });
+    function showToast(msg) {
+      if (!toast) return;
+      toast.querySelector(".toast-msg").textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(form._tid);
+      form._tid = setTimeout(function () { toast.classList.remove("show"); }, 3600);
+    }
   }
 
   /* ---------- Language toggle ---------- */
