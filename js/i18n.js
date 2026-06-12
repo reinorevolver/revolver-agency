@@ -26,7 +26,7 @@ window.I18N = {
     "about.p1": "ქცევითი მეცნიერება",
     "about.p2": "ნეირომეცნიერება",
     "about.p3": "მონაცემები, არა ვარაუდი",
-    "about.cap": "სააგენტოს ფოტო",
+    "about.cap": "REVOLVER AGENCY",
 
     "svc.kicker": "ექვსი ვაზნა",
     "svc.title": "ექვსი ვაზნა, ერთი მიზანი",
@@ -117,7 +117,7 @@ window.I18N = {
     "about.p1": "Behavioral science",
     "about.p2": "Neuroscience",
     "about.p3": "Data, not guesswork",
-    "about.cap": "Agency photo",
+    "about.cap": "REVOLVER AGENCY",
 
     "svc.kicker": "Six Chambers",
     "svc.title": "Six Chambers, One Target",
