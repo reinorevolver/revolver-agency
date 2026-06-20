@@ -313,7 +313,7 @@ window.ADDONS = [
   { price: "1200", ka: "TikTok — 5 ვიდეო თვეში", en: "TikTok — 5 videos / month" },
   { price: "2000", ka: "TikTok — 10 ვიდეო თვეში", en: "TikTok — 10 videos / month" },
   { price: "350",  suffix: { ka: "-დან", en: "+" }, ka: "1 რილის სრული პროდაქშენი — სცენარი, გადაღება, მონტაჟი", en: "Full reel production — script, shoot, edit" },
-  { price: "800",  suffix: { ka: "-დან", en: "+" }, ka: "ვებ-გვერდის შექმნა", en: "Website creation" }
+  { price: "1000", suffix: { ka: "-დან", en: "+" }, ka: "ვებ-გვერდის შექმნა", en: "Website creation" }
 ];
 
 
